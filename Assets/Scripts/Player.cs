@@ -32,4 +32,8 @@ public class Player : SwagObject {
 		Move(index + 1);
 	}
 
+	void OnTriggerEnter(Collider other) {
+		Debug.Log("Player Triggered");
+//		Destroy(other.gameObject);
+	}
 }

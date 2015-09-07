@@ -18,7 +18,7 @@ public class SwagObject : MonoBehaviour {
 
 	public void Move(int newIndex)
 	{
-		if(colControl.InBounds(newIndex))
+		if(colControl.InColumnBounds(newIndex))
 		{
 			float newPosX = colControl.GetIndexPos(newIndex);
 			Vector3 newPos = new Vector3(newPosX, transform.position.y, transform.position.z);
@@ -27,19 +27,19 @@ public class SwagObject : MonoBehaviour {
 		}
 	}
 
-	private bool moveLock = false;
-	private IEnumerator MoveToPosition(Vector3 startPos, Vector3 endPos, float time)
-	{
-		moveLock = true;
-		float elapsedTime = 0;
-		this.transform.position = startPos;
-		
-		while (elapsedTime < time)
-		{
-			this.transform.position = Vector3.Lerp(this.transform.position, endPos, (elapsedTime / time));
-			elapsedTime += Time.deltaTime;
-			yield return null;
-		}
-		moveLock = false;
-	}
+//	private bool moveLock = false;
+//	private IEnumerator MoveToPosition(Vector3 startPos, Vector3 endPos, float time)
+//	{
+//		moveLock = true;
+//		float elapsedTime = 0;
+//		this.transform.position = startPos;
+//		
+//		while (elapsedTime < time)
+//		{
+//			this.transform.position = Vector3.Lerp(this.transform.position, endPos, (elapsedTime / time));
+//			elapsedTime += Time.deltaTime;
+//			yield return null;
+//		}
+//		moveLock = false;
+//	}
 }
