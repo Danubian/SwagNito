@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{D094B105-04DD-F352-00F5-8A6C2976C379}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_1_3;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity513/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity513/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\AWSSDK\examples\Cognito Sync\CognitoSyncManagerSample.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\AWSConfigs.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.MissingTypes\ICloneable.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.MissingTypes\IOrderedDictionary.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.MissingTypes\_unity\InvalidDataException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\AWSCredentials.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\AmazonClientException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\AmazonResponseObject.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\AmazonServiceClient.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\AmazonServiceException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\AmazonUnmarshallingException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\AmazonWebServiceRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\AmazonWebServiceResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\ClientConfig.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\ConstantClass.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Enumerations.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\ExceptionHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\AmazonWebServiceRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\AsyncResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Auth\AWS3Signer.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Auth\AWS4Signer.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Auth\AbstractAWSSigner.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Auth\CloudFrontSigner.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Auth\NullSigner.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Auth\QueryStringSigner.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Auth\SignatureException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\AutoConstructedTypes.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\DefaultRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\ErrorResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\IAmazonWebServiceRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\IRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\IRequestData.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\ServiceClientHelpers.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Settings\_bcl\PersistenceManager.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Settings\_bcl\SettingsCollection.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Settings\_bcl\SettingsConstants.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Settings\_bcl\UserCrypto.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\StreamReadTracker.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\CustomMarshallTransformations.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\ErrorResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\IMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\IRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\IResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\ISimplifiedErrorUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\IUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\IWebResponseData.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\JsonErrorResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\JsonUnmarshallerContext.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\ResponseUnmarshallers.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\SimpleTypeUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\UnmarshallerContext.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\_bcl\HttpWebRequestResponseData.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Transform\_unity\UnityWebResponseData.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\CachingWrapperStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\ChunkedUploadWrapperStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\Collections.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\Dispatcher.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\EventStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\Extensions.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\HashStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\Hashing.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\HashingWrapper.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\IHashingWrapper.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\ILogger.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\Logger.Log4net.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\Logger.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\Metrics.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\NonDisposingWrapperStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\PartialWrapperStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\ReadOnlyWrapperStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\S3Uri.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\SdkCache.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\StringUtils.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\UnityDebugLogger.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\WrapperStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_bcl\DecryptStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_bcl\DecryptionWrapper.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_bcl\EncryptStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_bcl\EncryptUploadPartStream.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_bcl\EncryptionWrapper.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_bcl\HashingWrapper.bcl.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_bcl\IDecryptionWrapper.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_bcl\IEncryptionWrapper.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_bcl\Logger.Diagnostic.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_unity\ThreadPoolThrottler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\Util\_unity\UnityDebugTraceListener.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Internal\_bcl\AmazonWebServiceRequest.bcl.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\Contexts.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ErrorHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\HttpErrorResponseExceptionHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\IExceptionHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\WebExceptionHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\_unity\UnityErrorHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\ErrorHandler\_unity\UnityHttpErrorResponseExceptionHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\Handlers\CallbackHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\Handlers\CredentialsRetriever.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\Handlers\EndpointResolver.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\Handlers\ErrorCallbackHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\Handlers\Marshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\Handlers\MetricsHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\Handlers\RedirectHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\Handlers\Signer.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\Handlers\Unmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\HttpErrorResponseException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\HttpHandler\HttpHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\HttpHandler\IHttpRequestFactory.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\HttpHandler\_bcl\HttpWebRequestFactory.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\HttpHandler\_unity\UnityWebRequestFactory.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\IPipelineHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\PipelineHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\RetryHandler\DefaultRetryPolicy.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\RetryHandler\RetryHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\RetryHandler\RetryPolicy.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\RuntimeAsyncResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\RuntimePipeline.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\_unity\ThreadPoolExecutionHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\_unity\UnityHttpErrorResponseException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\_unity\UnityMainThreadDispatcher.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\Pipeline\_unity\UnityRequestQueue.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\PreRequestHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\RequestHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\RequestMetrics.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\ResponseHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\ResponseMetadata.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\SharedInterfaces\ICoreAmazonS3.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\SharedInterfaces\ICoreAmazonSQS.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\SignatureException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\StreamUploadProgressArgs.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\_bcl\ClientConfig.bcl.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\_unity\AmazonUnityServiceClient.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Runtime\_unity\AsyncOptions.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\AWSConfigs.Models.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\AWSPublicIpAddressRanges.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\AWSSDKUtils.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\CryptoUtil.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\HeaderKeys.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\ICryptoUtil.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\IO\Internal\_unity\NetworkInfo.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\Internal\InternalSDKUtils.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\Internal\InternalSDKUtils.generated.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\Internal\RootConfig.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\Internal\TypeWrapper.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\Internal\_bcl\InternalSDKUtils.bcl.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\Internal\_bcl\TypeWrapper.bcl.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\PaginatedResource.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\PaginatedResourceFactory.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\ReferenceTracking.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\Storage\Internal\_unity\PlayerPreferenceKVStore.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\Storage\Internal\_unity\SQLiteDatabase.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\Storage\_unity\KVStore.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\_bcl\AWSSDKUtils.bcl.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\_bcl\CryptoUtil.bcl.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\_bcl\ProfileManager.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\_unity\AWSConfigs.Models.unity.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\Amazon.Util\_unity\AmazonHookedPlatformInfo.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\GlobalSuppressions.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\RegionEndpoint.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\SupportServicesList.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\Ionic.Zlib\Crc32.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\Json\IJsonWrapper.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\Json\JsonData.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\Json\JsonException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\Json\JsonMapper.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\Json\JsonReader.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\Json\JsonWriter.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\Json\Lexer.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\Json\ParserToken.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\MD5\_bcl\MD5Core.bcl.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\ThirdParty\MD5\_bcl\MD5Managed.bcl.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\_unity\AWSConfigs.unity.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\_unity\AWSSection.unity.cs" />
+     <Compile Include="Assets\AWSSDK\src\Core\_unity\UnityInitializer.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Custom\CognitoAWSCredentials.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Custom\Model\Credentials.Extensions.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Custom\_unity\AmazonCognitoIdentityResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Custom\_unity\CognitoAWSCredentials.unity.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Custom\_unity\CognitoIdentityAsyncExecutor.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\AmazonCognitoIdentityConfig.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\AmazonCognitoIdentityException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\AmazonCognitoIdentityRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\CreateIdentityPoolRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\CreateIdentityPoolResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\CreateIdentityPoolResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Credentials.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\DeleteIdentityPoolRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\DeleteIdentityPoolResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\DescribeIdentityPoolRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\DescribeIdentityPoolResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\DescribeIdentityPoolResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\DescribeIdentityRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\DescribeIdentityResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\DescribeIdentityResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\DeveloperUserAlreadyRegisteredException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetCredentialsForIdentityRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetCredentialsForIdentityResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetCredentialsForIdentityResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetIdRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetIdResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetIdResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetIdentityPoolRolesRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetIdentityPoolRolesResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetIdentityPoolRolesResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetOpenIdTokenForDeveloperIdentityRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetOpenIdTokenForDeveloperIdentityResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetOpenIdTokenForDeveloperIdentityResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetOpenIdTokenRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetOpenIdTokenResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\GetOpenIdTokenResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\IdentityDescription.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\IdentityPoolShortDescription.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\CreateIdentityPoolRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\CreateIdentityPoolResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\CredentialsUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\DeleteIdentityPoolRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\DeleteIdentityPoolResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\DescribeIdentityPoolRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\DescribeIdentityPoolResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\DescribeIdentityRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\DescribeIdentityResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\GetCredentialsForIdentityRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\GetCredentialsForIdentityResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\GetIdRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\GetIdResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\GetIdentityPoolRolesRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\GetIdentityPoolRolesResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\GetOpenIdTokenForDeveloperIdentityRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\GetOpenIdTokenForDeveloperIdentityResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\GetOpenIdTokenRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\GetOpenIdTokenResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\IdentityDescriptionUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\IdentityPoolShortDescriptionUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\ListIdentitiesRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\ListIdentitiesResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\ListIdentityPoolsRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\ListIdentityPoolsResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\LookupDeveloperIdentityRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\LookupDeveloperIdentityResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\MergeDeveloperIdentitiesRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\MergeDeveloperIdentitiesResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\SetIdentityPoolRolesRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\SetIdentityPoolRolesResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\UnlinkDeveloperIdentityRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\UnlinkDeveloperIdentityResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\UnlinkIdentityRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\UnlinkIdentityResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\UpdateIdentityPoolRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\Internal\MarshallTransformations\UpdateIdentityPoolResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\InternalErrorException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\InvalidIdentityPoolConfigurationException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\InvalidParameterException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\LimitExceededException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\ListIdentitiesRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\ListIdentitiesResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\ListIdentitiesResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\ListIdentityPoolsRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\ListIdentityPoolsResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\ListIdentityPoolsResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\LookupDeveloperIdentityRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\LookupDeveloperIdentityResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\LookupDeveloperIdentityResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\MergeDeveloperIdentitiesRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\MergeDeveloperIdentitiesResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\MergeDeveloperIdentitiesResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\NotAuthorizedException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\ResourceConflictException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\ResourceNotFoundException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\SetIdentityPoolRolesRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\SetIdentityPoolRolesResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\TooManyRequestsException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\UnlinkDeveloperIdentityRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\UnlinkDeveloperIdentityResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\UnlinkIdentityRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\UnlinkIdentityResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\UpdateIdentityPoolRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\UpdateIdentityPoolResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\Model\UpdateIdentityPoolResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\ServiceEnumerations.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\_unity\AmazonCognitoIdentityClient.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoIdentity\Generated\_unity\IAmazonCognitoIdentity.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\GlobalSuppressions.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\Internal\CognitoCredentialsRetriever.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\Internal\_unity\AmazonCognitoSyncPostMarshallHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\Internal\_unity\AmazonCognitoSyncPostSignHandler.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Exceptions\_unity\DataConflictException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Exceptions\_unity\DataLimitExceededException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Exceptions\_unity\DataStorageException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Exceptions\_unity\DatasetNotFoundException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Exceptions\_unity\NetworkException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Exceptions\_unity\SyncManagerException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Model\_unity\AmazonCognitoSyncResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Storage\_unity\CognitoSyncStorage.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Storage\_unity\ILocalStorage.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Storage\_unity\IRemoteDataStorage.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Storage\_unity\InMemoryStorage.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Storage\_unity\SQLiteLocalStorage.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\Util\_unity\DatasetUtils.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\_unity\CognitoSyncManager.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\_unity\Dataset.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\_unity\DatasetMetadata.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\_unity\Record.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Custom\SyncManager\_unity\SyncConflict.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\AmazonCognitoSyncConfig.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\AmazonCognitoSyncException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\AlreadyStreamedException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\AmazonCognitoSyncRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\BulkPublishRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\BulkPublishResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\BulkPublishResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\CognitoStreams.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Dataset.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DeleteDatasetRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DeleteDatasetResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DeleteDatasetResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DescribeDatasetRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DescribeDatasetResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DescribeDatasetResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DescribeIdentityPoolUsageRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DescribeIdentityPoolUsageResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DescribeIdentityPoolUsageResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DescribeIdentityUsageRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DescribeIdentityUsageResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DescribeIdentityUsageResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\DuplicateRequestException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\GetBulkPublishDetailsRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\GetBulkPublishDetailsResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\GetBulkPublishDetailsResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\GetCognitoEventsRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\GetCognitoEventsResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\GetCognitoEventsResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\GetIdentityPoolConfigurationRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\GetIdentityPoolConfigurationResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\GetIdentityPoolConfigurationResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\IdentityPoolUsage.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\IdentityUsage.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\BulkPublishRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\BulkPublishResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\CognitoStreamsMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\CognitoStreamsUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\DatasetUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\DeleteDatasetRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\DeleteDatasetResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\DescribeDatasetRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\DescribeDatasetResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\DescribeIdentityPoolUsageRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\DescribeIdentityPoolUsageResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\DescribeIdentityUsageRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\DescribeIdentityUsageResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\GetBulkPublishDetailsRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\GetBulkPublishDetailsResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\GetCognitoEventsRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\GetCognitoEventsResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\GetIdentityPoolConfigurationRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\GetIdentityPoolConfigurationResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\IdentityPoolUsageUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\IdentityUsageUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\KinesisStreamingMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\KinesisStreamingUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\ListDatasetsRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\ListDatasetsResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\ListIdentityPoolUsageRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\ListIdentityPoolUsageResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\ListRecordsRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\ListRecordsResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\PushSyncMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\PushSyncUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\RecordPatchMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\RecordUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\RegisterDeviceRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\RegisterDeviceResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\SetCognitoEventsRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\SetCognitoEventsResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\SetIdentityPoolConfigurationRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\SetIdentityPoolConfigurationResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\SubscribeToDatasetRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\SubscribeToDatasetResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\UnsubscribeFromDatasetRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\UnsubscribeFromDatasetResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\UpdateRecordsRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Internal\MarshallTransformations\UpdateRecordsResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\InternalErrorException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\InvalidConfigurationException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\InvalidLambdaFunctionOutputException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\InvalidParameterException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\KinesisStreaming.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\LambdaThrottledException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\LimitExceededException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ListDatasetsRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ListDatasetsResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ListDatasetsResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ListIdentityPoolUsageRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ListIdentityPoolUsageResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ListIdentityPoolUsageResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ListRecordsRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ListRecordsResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ListRecordsResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\NotAuthorizedException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\PushSync.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\Record.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\RecordPatch.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\RegisterDeviceRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\RegisterDeviceResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\RegisterDeviceResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ResourceConflictException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\ResourceNotFoundException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\SetCognitoEventsRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\SetCognitoEventsResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\SetIdentityPoolConfigurationRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\SetIdentityPoolConfigurationResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\SetIdentityPoolConfigurationResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\SubscribeToDatasetRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\SubscribeToDatasetResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\SubscribeToDatasetResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\TooManyRequestsException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\UnsubscribeFromDatasetRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\UnsubscribeFromDatasetResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\UnsubscribeFromDatasetResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\UpdateRecordsRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\UpdateRecordsResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\Model\UpdateRecordsResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\ServiceEnumerations.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\_unity\AmazonCognitoSyncClient.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\CognitoSync\Generated\_unity\IAmazonCognitoSync.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Custom\AssumeRoleAWSCredentials.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Custom\Model\Credentials.Extensions.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Custom\_bcl\AssumeRoleAWSCredentials.bcl.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\AmazonSecurityTokenServiceConfig.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\AmazonSecurityTokenServiceException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AmazonSecurityTokenServiceRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AssumeRoleRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AssumeRoleResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AssumeRoleResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AssumeRoleWithSAMLRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AssumeRoleWithSAMLResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AssumeRoleWithSAMLResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AssumeRoleWithWebIdentityRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AssumeRoleWithWebIdentityResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AssumeRoleWithWebIdentityResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\AssumedRoleUser.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Credentials.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\DecodeAuthorizationMessageRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\DecodeAuthorizationMessageResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\DecodeAuthorizationMessageResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\ExpiredTokenException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\FederatedUser.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\GetFederationTokenRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\GetFederationTokenResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\GetFederationTokenResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\GetSessionTokenRequest.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\GetSessionTokenResponse.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\GetSessionTokenResult.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\IDPCommunicationErrorException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\IDPRejectedClaimException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\AssumeRoleRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\AssumeRoleResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\AssumeRoleWithSAMLRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\AssumeRoleWithSAMLResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\AssumeRoleWithWebIdentityRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\AssumeRoleWithWebIdentityResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\AssumedRoleUserUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\CredentialsUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\DecodeAuthorizationMessageRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\DecodeAuthorizationMessageResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\FederatedUserUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\GetFederationTokenRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\GetFederationTokenResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\GetSessionTokenRequestMarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\Internal\MarshallTransformations\GetSessionTokenResponseUnmarshaller.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\InvalidAuthorizationMessageException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\InvalidIdentityTokenException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\MalformedPolicyDocumentException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\Model\PackedPolicyTooLargeException.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\ServiceEnumerations.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\_unity\AmazonSecurityTokenServiceClient.cs" />
+     <Compile Include="Assets\AWSSDK\src\Services\SecurityToken\Generated\_unity\IAmazonSecurityTokenService.cs" />
+     <None Include="Assets\AWSSDK\src\Core\Resources\awsconfig.xml" />
+     <None Include="Assets\AWSSDK\src\Services\CognitoSync\aws-unity-sdk-version-CognitoSync.txt" />
+     <None Include="Assets\AWSSDK\src\Core\aws-unity-sdk-version-Core.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity513/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity513/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity513/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>/Applications/Unity513/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
