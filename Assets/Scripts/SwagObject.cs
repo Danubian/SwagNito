@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SwagObject : GameObject {
+public class SwagObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
