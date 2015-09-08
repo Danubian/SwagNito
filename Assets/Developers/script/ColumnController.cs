@@ -6,13 +6,8 @@ namespace Developers
 
     public class ColumnController : MonoBehaviour
     {
-        //	public float horizontalSpeed;
         public RectTransform boundaries;
-        //	public float leftBound;
-        //	public float rightBound;
         private float basePos;
-        //	private float width = 1f;
-		private int max = GlobalVars.NUM_COLUMNS;
         private float colSize;
         //	private float length;
         [HideInInspector]
@@ -36,15 +31,9 @@ namespace Developers
             topBound = corners[2].y;
 
             float length = rightBound - leftBound;
-            colSize = length / max;
+			colSize = length / GlobalVars.COLUMNS_TOTAL;
 
             basePos = leftBound + colSize / 2;
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public float GetIndexPos(int index)
@@ -55,17 +44,14 @@ namespace Developers
         public bool InColumnBounds(int index)
         {
             bool leftBounds = index >= 0;
-            bool rightBounds = index < max;
+			bool rightBounds = index < GlobalVars.COLUMNS_TOTAL;
             return leftBounds && rightBounds;
         }
 
         public bool InVertBounds(float pos, float buffer)
         {
-//            Debug.Log("InVertBounds : " + pos + ", " + buffer);
             bool inBottomBound = pos >= bottomBound - buffer;
-//            Debug.Log("inBottomBound : " + inBottomBound + ", " + bottomBound);
             bool inTopBound = pos <= topBound + buffer;
-//            Debug.Log("inTopBound : " + inTopBound + ", " + topBound);
             return inBottomBound && inTopBound;
         }
     }

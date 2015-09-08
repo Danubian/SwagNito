@@ -67,7 +67,7 @@ namespace Developers
 
             //
             _asteroids.ForceStart(GlobalVars.POOL_SIZE_SMALL, GlobalVars.PREFAB_NAME_ASTEROID_1, _pooling_parent.transform);
-            //_bullets.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_BULLET, _pooling_parent.transform);
+            _bullets.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_BULLET, _pooling_parent.transform);
             //_effect_bullet_hit_asteroid.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_EFFECT_BULLET_HIT_ASTEROID, _pooling_parent.transform);
             //_effect_level_up.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_EFFECT_LEVEL_UP, _pooling_parent.transform);
         }

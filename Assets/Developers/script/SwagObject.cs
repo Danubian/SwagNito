@@ -6,6 +6,15 @@ namespace Developers
 
     public class SwagObject : MonoBehaviour
     {
+		public enum Type {
+			PLAYER,
+			ASTEROID,
+			BULLET
+		}
+
+		public Type entityType;
+
+		public float speed;
 
         public ColumnController colControl;
 
@@ -35,34 +44,35 @@ namespace Developers
 
 		void OnTriggerEnter(Collider other)
 		{
-			int otherIndex = other.GetComponent<SwagObject>().index;
-
+			SwagObject otherObject = other.GetComponent<SwagObject>();
+			int otherIndex = otherObject.index;
+			Debug.LogWarning("Index Mismatcch: " + other.name + ": " + otherIndex + " , " + this.name + ": " + index);
 			if(otherIndex == this.index)
 			{
-				HandleCollision();
+				HandleCollision(otherObject.entityType);
 			}
 			//		Destroy(other.gameObject);
 		}
 
-		public virtual void HandleCollision()
+		public virtual void Setup(int index)
 		{
+			Move(index);
 		}
 
-        //	private bool moveLock = false;
-        //	private IEnumerator MoveToPosition(Vector3 startPos, Vector3 endPos, float time)
-        //	{
-        //		moveLock = true;
-        //		float elapsedTime = 0;
-        //		this.transform.position = startPos;
-        //		
-        //		while (elapsedTime < time)
-        //		{
-        //			this.transform.position = Vector3.Lerp(this.transform.position, endPos, (elapsedTime / time));
-        //			elapsedTime += Time.deltaTime;
-        //			yield return null;
-        //		}
-        //		moveLock = false;
-        //	}
+		public virtual void HandleCollision(Type other)
+		{
+			Debug.LogError("SwagObject : HandleCollision" + other.ToString());
+		}
+
+		protected void OnDestroy()
+		{
+			gameObject.SetActive(false);
+		}
+
+		protected bool InVertBounds()
+		{
+			return colControl.InVertBounds(this.transform.position.y, GlobalVars.VERT_DEPTH_BUFFER);
+		}
     }
 
 }

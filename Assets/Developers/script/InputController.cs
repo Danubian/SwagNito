@@ -31,10 +31,10 @@ namespace Developers
 
                 Vector3[] corners = new Vector3[4];
                 GetComponent<RectTransform>().GetWorldCorners(corners);
-                foreach (Vector3 corner in corners)
-                {
-                    Debug.Log("Corner : " + corner.ToString());
-                }
+//                foreach (Vector3 corner in corners)
+//                {
+//                    Debug.Log("Corner : " + corner.ToString());
+//                }
 
                 colCont.ForceStart();
             }
@@ -42,7 +42,7 @@ namespace Developers
 
         public void OnLeftClick()
         {
-            Debug.Log("Left Side Clicked");
+//            Debug.Log("Left Side Clicked");
             if (player != null)
             {
                 player.MoveLeft();
@@ -51,7 +51,7 @@ namespace Developers
 
         public void OnRightClick()
         {
-            Debug.Log("Right Side Clicked");
+//            Debug.Log("Right Side Clicked");
             if (player != null)
             {
                 player.MoveRight();

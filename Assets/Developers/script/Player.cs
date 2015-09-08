@@ -19,6 +19,7 @@ namespace Developers
         // Use this for initialization
         void Start()
         {
+			this.entityType = Type.PLAYER;
             Move(4);
         }
 
@@ -31,16 +32,30 @@ namespace Developers
         public void MoveLeft()
         {
             Move(index - 1);
+			SpawnBullet();
         }
 
         public void MoveRight()
         {
             Move(index + 1);
+			SpawnBullet();
         }
 
-		public override void HandleCollision()
+		public void SpawnBullet()
 		{
-			Debug.Log("Player : HandleCollision");
+			GameObject bullet = Main.GetInstance().Pools.Get_Bullet();
+			if( bullet != null )
+			{
+				Bullet bulletController = bullet.GetComponent<Bullet>();
+				bulletController.colControl = colControl;
+				bulletController.Setup(this.index);
+				bullet.transform.position = this.transform.position;
+			}
+		}
+
+		public override void HandleCollision(Type other)
+		{
+//			Debug.Log("Player : HandleCollision" + other.ToString());
 		}
     }
 }

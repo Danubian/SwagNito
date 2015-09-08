@@ -7,20 +7,18 @@ namespace Developers
     public class AsteroidController : MonoBehaviour
     {
         public ColumnController colControl;
-        private static string ASTEROID_PATH = "Asteroid";
-        private float lastSpawnTime = 0f;
         // Use this for initialization
         void Start()
         {
-            SpawnAsteroid(4);
+            SpawnAsteroid(GlobalVars.COLUMNS_CENTER_INDEX);
         }
-
-        // Update is called once per frame
+		
+		private float lastSpawnTime;
         void Update()
         {
 			if ((Time.time - lastSpawnTime) >= GlobalVars.ASTEROID_SPAWN_TIME)
             {
-                int index = Random.Range(0, GlobalVars.NUM_COLUMNS);
+                int index = Random.Range(0, GlobalVars.COLUMNS_TOTAL);
                 SpawnAsteroid(index);
             }
         }
