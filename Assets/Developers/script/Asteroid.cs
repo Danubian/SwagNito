@@ -6,7 +6,6 @@ namespace Developers
 
     public class Asteroid : SwagObject
     {
-        private static float Y_BUFFER = 1f;
         // Use this for initialization
         void Start()
         {
@@ -19,18 +18,13 @@ namespace Developers
             if (InVertBounds())
             {
                 Vector3 pos = transform.position;
-                transform.position = new Vector3(pos.x, pos.y + .5f, pos.z);
+				float newPosY = pos.y + GlobalVars.ASTEROID_SPEED;
+                transform.position = new Vector3(pos.x, newPosY, pos.z);
             }
             else
             {
                 Destroy(this.gameObject);
             }
-        }
-
-        void OnTriggerEnter(Collider other)
-        {
-            Debug.Log("Asteroid Triggered");
-            //		Destroy(other.gameObject);
         }
 
         public void Setup(int index)
@@ -42,14 +36,19 @@ namespace Developers
         public void MoveToBottom()
         {
             Vector3 pos = transform.position;
-            transform.position = new Vector3(pos.x, colControl.bottomBound + Y_BUFFER, pos.z);
+			transform.position = new Vector3(pos.x, colControl.bottomBound - GlobalVars.VERT_DEPTH_BUFFER, pos.z);
         }
 
         private bool InVertBounds()
         {
             //TODO
             //		return true;
-            return colControl.InVertBounds(this.transform.position.y, Y_BUFFER);
+			return colControl.InVertBounds(this.transform.position.y, GlobalVars.VERT_DEPTH_BUFFER);
         }
+
+		public override void HandleCollision()
+		{
+			Destroy(this.transform.gameObject);
+		}
     }
 }

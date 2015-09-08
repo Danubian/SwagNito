@@ -8,7 +8,6 @@ namespace Developers
     {
         public ColumnController colControl;
         private static string ASTEROID_PATH = "Asteroid";
-        private static float SPAWN_TIME = 1f;
         private float lastSpawnTime = 0f;
         // Use this for initialization
         void Start()
@@ -19,9 +18,9 @@ namespace Developers
         // Update is called once per frame
         void Update()
         {
-            if ((Time.time - lastSpawnTime) >= SPAWN_TIME)
+			if ((Time.time - lastSpawnTime) >= GlobalVars.ASTEROID_SPAWN_TIME)
             {
-                int index = Random.Range(0, colControl.max);
+                int index = Random.Range(0, GlobalVars.NUM_COLUMNS);
                 SpawnAsteroid(index);
             }
         }

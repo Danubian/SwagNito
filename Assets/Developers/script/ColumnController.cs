@@ -12,7 +12,7 @@ namespace Developers
         //	public float rightBound;
         private float basePos;
         //	private float width = 1f;
-        public int max = 8;
+		private int max = GlobalVars.NUM_COLUMNS;
         private float colSize;
         //	private float length;
         [HideInInspector]
@@ -25,10 +25,10 @@ namespace Developers
         {
             Vector3[] corners = new Vector3[4];
             boundaries.GetWorldCorners(corners);
-            foreach (Vector3 corner in corners)
-            {
-                Debug.Log("Corner : " + corner.ToString());
-            }
+//            foreach (Vector3 corner in corners)
+//            {
+//                Debug.Log("Corner : " + corner.ToString());
+//            }
 
             float leftBound = corners[0].x;
             bottomBound = corners[0].y;
@@ -61,11 +61,11 @@ namespace Developers
 
         public bool InVertBounds(float pos, float buffer)
         {
-            Debug.Log("InVertBounds : " + pos + ", " + buffer);
+//            Debug.Log("InVertBounds : " + pos + ", " + buffer);
             bool inBottomBound = pos >= bottomBound - buffer;
-            Debug.Log("inBottomBound : " + inBottomBound + ", " + bottomBound);
+//            Debug.Log("inBottomBound : " + inBottomBound + ", " + bottomBound);
             bool inTopBound = pos <= topBound + buffer;
-            Debug.Log("inTopBound : " + inTopBound + ", " + topBound);
+//            Debug.Log("inTopBound : " + inTopBound + ", " + topBound);
             return inBottomBound && inTopBound;
         }
     }
