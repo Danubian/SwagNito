@@ -27,7 +27,7 @@ namespace Developers
 		public const float ASTEROID_SPAWN_TIME = 0.3f;
         public const float ASTEROID_SPEED = .125f;
 
-        public const float ASTEROID_SPEED_RAMP = ASTEROID_SPEED / 60f;
+        public const float ASTEROID_SPEED_RAMP = 0.1f;
 
 		public const float BULLET_SPEED = -.0625f;
         public const float FIRE_COOLDOWN = 0.5f;

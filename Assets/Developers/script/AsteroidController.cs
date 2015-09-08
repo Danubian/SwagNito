@@ -22,11 +22,28 @@ namespace Developers
             }
         }
 
+        private bool bSpeedAmpViaTime_rise = true;
+        private float speedAmpViaTime = 0;
 		private float asteroidSpeed = GlobalVars.ASTEROID_SPEED;
         private void SpawnAsteroid(int index)
         {
             lastSpawnTime = Time.time;
-			asteroidSpeed += GlobalVars.ASTEROID_SPEED_RAMP;
+
+            //
+            if (speedAmpViaTime >= .4f)
+                bSpeedAmpViaTime_rise = false;
+            else if(speedAmpViaTime <= -.4f)
+                bSpeedAmpViaTime_rise=true;
+
+            //
+            if (bSpeedAmpViaTime_rise == true)
+                speedAmpViaTime += Time.deltaTime;
+            else
+                speedAmpViaTime -= Time.deltaTime;
+
+            //
+            asteroidSpeed = GlobalVars.ASTEROID_SPEED + Mathf.Sin(speedAmpViaTime) * GlobalVars.ASTEROID_SPEED_RAMP;
+
 
             GameObject asteroid = Main.GetInstance().Pools.Get_Asteroid();
             if( asteroid != null )
