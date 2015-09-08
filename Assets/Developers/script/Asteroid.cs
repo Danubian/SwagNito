@@ -19,11 +19,12 @@ namespace Developers
             if (InVertBounds())
             {
                 Vector3 pos = transform.position;
-                transform.position = new Vector3(pos.x, pos.y + .5f, pos.z);
+                transform.position = new Vector3(pos.x, pos.y + .1f, pos.z);
             }
             else
             {
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
+                gameObject.SetActive(false);
             }
         }
 

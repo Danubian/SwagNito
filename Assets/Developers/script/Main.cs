@@ -58,6 +58,7 @@ namespace Developers
             GotoMenu_Title();
         }
 
+        public MainPooling Pools { get { return _pooling; } }
         public MainProgress Progress { get { return _progress; } }
 
         public void LoadGame()

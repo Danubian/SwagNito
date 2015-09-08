@@ -30,12 +30,13 @@ namespace Developers
         {
             lastSpawnTime = Time.time;
 
-            GameObject asteroid = Instantiate(Resources.Load(ASTEROID_PATH)) as GameObject;
-            asteroid.transform.parent = transform;
-            asteroid.name = "Asteroid";
-            Asteroid asteroidController = asteroid.GetComponent<Asteroid>();
-            asteroidController.colControl = colControl;
-            asteroidController.Setup(index);
+            GameObject asteroid = Main.GetInstance().Pools.Get_Asteroid();
+            if( asteroid != null )
+            {
+                Asteroid asteroidController = asteroid.GetComponent<Asteroid>();
+                asteroidController.colControl = colControl;
+                asteroidController.Setup(index);
+            }
         }
     }
 }
