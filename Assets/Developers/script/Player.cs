@@ -56,6 +56,9 @@ namespace Developers
 
                 _graphics.SetActive(false);
                 StartCoroutine("GotoResults");
+
+                //
+                Main.GetInstance().Audio.PlayFX_PlayerDeath();
             }
 
 		}

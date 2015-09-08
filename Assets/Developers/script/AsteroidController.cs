@@ -35,6 +35,9 @@ namespace Developers
                 Asteroid asteroidController = asteroid.GetComponent<Asteroid>();
                 asteroidController.colControl = colControl;
                 asteroidController.Setup(index);
+
+                //
+                Main.GetInstance().Audio.PlayMusic_SpawnAsteroid();
             }
         }
     }

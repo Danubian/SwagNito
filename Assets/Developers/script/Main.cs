@@ -36,15 +36,16 @@ namespace Developers
             _registry = gameObject.AddComponent<MainRegistry>();
             DBG.Log("Created registry.");
 
-            //
-            _pooling = gameObject.AddComponent<MainPooling>();
-            DBG.Log("Created pools.");
-
             _audio = gameObject.AddComponent<MainAudio>();
+            _audio.ForceStart();
             DBG.Log("Created audio.");
 
             _progress = gameObject.AddComponent<MainProgress>();
             DBG.Log("Created progress.");
+
+            //
+            _pooling = gameObject.AddComponent<MainPooling>();
+            DBG.Log("Created pools.");
 
             //
             _menu_title = PrefabLoader.Load(GlobalVars.PREFAB_NAME_MENU_TITLE,transform);
@@ -60,6 +61,7 @@ namespace Developers
 
         public MainPooling Pools { get { return _pooling; } }
         public MainProgress Progress { get { return _progress; } }
+        public MainAudio Audio { get { return _audio; } }
         public MainRegistry Registry { get { return _registry; } }
 
         public void LoadGame()
@@ -75,6 +77,10 @@ namespace Developers
             //
             _game = PrefabLoader.Load(GlobalVars.PREFAB_NAME_GAME, transform).GetComponent<MainGame>();
             _game.gameObject.SetActive(true);
+
+            //
+            Main.GetInstance().Audio.PlayMusic_Game();
+
             DBG.Log("Starting game.");
         }
         public void KillGame()
@@ -100,21 +106,33 @@ namespace Developers
         {
             _DisableMenus();
             _menu_title.SetActive(true);
+
+            //
+            Main.GetInstance().Audio.PlayMusic_Title();
         }
         public void GotoMenu_Results()
         {
             _DisableMenus();
             _menu_results.SetActive(true);
+
+            //
+            Main.GetInstance().Audio.PlayMusic_Game();
         }
         public void GotoMenu_Credits()
         {
             _DisableMenus();
             _menu_credits.SetActive(true);
+
+            //
+            Main.GetInstance().Audio.PlayMusic_Game();
         }
         public void GotoMenu_Connect()
         {
             _DisableMenus();
             _menu_connect.SetActive(true);
+
+            //
+            Main.GetInstance().Audio.PlayMusic_Game();
         }
     }
 
