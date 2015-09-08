@@ -49,7 +49,7 @@ namespace Developers
 
 		public override void HandleCollision()
 		{
-			Destroy(this.transform.gameObject);
+			gameObject.SetActive(false);
 		}
     }
 }
