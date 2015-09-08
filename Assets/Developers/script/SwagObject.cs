@@ -33,6 +33,21 @@ namespace Developers
             }
         }
 
+		void OnTriggerEnter(Collider other)
+		{
+			int otherIndex = other.GetComponent<SwagObject>().index;
+
+			if(otherIndex == this.index)
+			{
+				HandleCollision();
+			}
+			//		Destroy(other.gameObject);
+		}
+
+		public virtual void HandleCollision()
+		{
+		}
+
         //	private bool moveLock = false;
         //	private IEnumerator MoveToPosition(Vector3 startPos, Vector3 endPos, float time)
         //	{

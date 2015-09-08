@@ -23,10 +23,10 @@ namespace Developers
         }
 
         // Update is called once per frame
-        void Update()
-        {
-
-        }
+//        void Update()
+//        {
+//
+//        }
 
         public void MoveLeft()
         {
@@ -38,10 +38,9 @@ namespace Developers
             Move(index + 1);
         }
 
-        void OnTriggerEnter(Collider other)
-        {
-            Debug.Log("Player Triggered");
-            //		Destroy(other.gameObject);
-        }
+		public override void HandleCollision()
+		{
+			Debug.Log("Player : HandleCollision");
+		}
     }
 }
