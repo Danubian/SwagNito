@@ -36,6 +36,12 @@ namespace Developers
             DBG.Log("Bullet : HandleCollision " + other.ToString() + ", eval: " + (other == Type.ASTEROID));
 			if(other == Type.ASTEROID)
 			{
+                GameObject effect = Main.GetInstance().Pools.Get_Effect_Bullet_Hit_Asteroid();
+                if (effect != null)
+                {
+                    effect.transform.position = transform.position;
+                }
+
 				DBG.Log("Object Destroyed " + this.name);
 				OnDestroy();
 			}
