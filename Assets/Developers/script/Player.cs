@@ -6,6 +6,7 @@ namespace Developers
 
     public class Player : SwagObject
     {
+		public GameObject _graphics;
         //	public float horizontalSpeed;
         //	public RectTransform boundaries;
         //	public float leftBound;
@@ -22,12 +23,6 @@ namespace Developers
             Move(4);
         }
 
-        // Update is called once per frame
-//        void Update()
-//        {
-//
-//        }
-
         public void MoveLeft()
         {
             Move(index - 1);
@@ -38,6 +33,7 @@ namespace Developers
             Move(index + 1);
         }
 
+		bool bAlive = true;
 		public override void HandleCollision()
 		{
             if( bAlive == true )
