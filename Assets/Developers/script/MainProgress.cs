@@ -12,7 +12,16 @@ namespace Developers
         private int _latest_depth;
 
         public int BestDepth { get { return _best_depth; } set { _best_depth = value; } }
-        public int BestLevel { get { return _best_level; } set { _best_level = value; } }
+        public int BestLevel {
+			get 
+			{ 
+				return _best_level; 
+			} 
+			set 
+			{ 
+				_best_level = value; 
+			} 
+		}
         public int LatestDepth { get { return _latest_depth; } set { _latest_depth = value; } }
 
         void Start()
@@ -37,7 +46,7 @@ namespace Developers
             if (level_string.Length > 9)
                 level_string = level_string.Substring(0, 9);
 
-            return "L" + level_string;
+            return "Lvl" + level_string;
         }
     }
 

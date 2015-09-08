@@ -3,7 +3,6 @@ using System.Collections;
 
 namespace Developers
 {
-
     public class SwagObject : MonoBehaviour
     {
 		public enum Type {
@@ -19,17 +18,6 @@ namespace Developers
         public ColumnController colControl;
 
         public int index;
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         public void Move(int newIndex)
         {
@@ -46,12 +34,10 @@ namespace Developers
 		{
 			SwagObject otherObject = other.GetComponent<SwagObject>();
 			int otherIndex = otherObject.index;
-			Debug.LogWarning("Index Mismatcch: " + other.name + ": " + otherIndex + " , " + this.name + ": " + index);
 			if(otherIndex == this.index)
 			{
 				HandleCollision(otherObject.entityType);
 			}
-			//		Destroy(other.gameObject);
 		}
 
 		public virtual void Setup(int index)
@@ -74,5 +60,4 @@ namespace Developers
 			return colControl.InVertBounds(this.transform.position.y, GlobalVars.VERT_DEPTH_BUFFER);
 		}
     }
-
 }

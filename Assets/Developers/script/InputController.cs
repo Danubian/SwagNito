@@ -3,7 +3,6 @@ using System.Collections;
 
 namespace Developers
 {
-
     public class InputController : MonoBehaviour
     {
         public Player player;
@@ -15,11 +14,6 @@ namespace Developers
 
             Canvas canv1 = gameObject.GetComponent<Canvas>();
             canv1.worldCamera = Camera.main;
-        }
-
-        // Use this for initialization
-        void Start()
-        {
         }
 
         // Update is called once per frame
@@ -35,7 +29,6 @@ namespace Developers
 
         public void OnLeftClick()
         {
-//            Debug.Log("Left Side Clicked");
             if (player != null)
             {
                 player.MoveLeft();
@@ -44,7 +37,6 @@ namespace Developers
 
         public void OnRightClick()
         {
-//            Debug.Log("Right Side Clicked");
             if (player != null)
             {
                 player.MoveRight();

@@ -3,11 +3,10 @@ using System.Collections;
 
 namespace Developers
 {
-
     public class AsteroidController : MonoBehaviour
     {
         public ColumnController colControl;
-        // Use this for initialization
+
         void Start()
         {
             SpawnAsteroid(GlobalVars.COLUMNS_CENTER_INDEX);
