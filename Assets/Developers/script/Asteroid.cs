@@ -40,10 +40,11 @@ namespace Developers
             }
         }
 
-        public override void Setup(int index)
+        public void Setup(int index, float speed)
         {
 			base.Setup(index);
             MoveToBottom();
+            this.speed = speed;
         }
 
         public void MoveToBottom()

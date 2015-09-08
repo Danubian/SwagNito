@@ -25,9 +25,12 @@ namespace Developers
         public const string PREFAB_NAME_EFFECT_LEVEL_UP = "effect_bullet_level_up";
 
 		public const float ASTEROID_SPAWN_TIME = 0.3f;
-		public const float ASTEROID_SPEED = .125f;
+        public const float ASTEROID_SPEED = .125f;
+
+        public const float ASTEROID_SPEED_RAMP = ASTEROID_SPEED / 60f;
 
 		public const float BULLET_SPEED = -.0625f;
+        public const float FIRE_COOLDOWN = 0.5f;
 
 		public const int COLUMNS_TOTAL = 9;
 		public const int COLUMNS_CENTER_INDEX = COLUMNS_TOTAL / 2;

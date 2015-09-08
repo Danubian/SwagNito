@@ -12,6 +12,11 @@ namespace Developers
             Move(4);
         }
 
+        void Update()
+        {
+            _graphics.transform.rotation *= Quaternion.Euler(Vector3.forward * 2f);
+        }
+
         public void MoveLeft()
         {
             if (bAlive == false)
