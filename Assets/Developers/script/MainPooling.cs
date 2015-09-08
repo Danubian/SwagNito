@@ -13,9 +13,22 @@ namespace Developers
 
         public void ForceStart(int size, string prefab, Transform parent_transform)
         {
-            for( int ii=0; ii<size; ++ii )
+            for (int ii = 0; ii < size; ++ii)
             {
                 GameObject instance = PrefabLoader.Load(prefab);
+                instance.SetActive(false);
+                instance.transform.parent = parent_transform;
+                _objects.Add(instance);
+            }
+        }
+        public void ForceStart(int size, string[] prefabs, Transform parent_transform)
+        {
+            for (int ii = 0; ii < size; ++ii)
+            {
+                int rand = UnityEngine.Random.Range(1, 3);
+                GameObject instance = PrefabLoader.Load(prefabs[rand]);
+
+                //
                 instance.SetActive(false);
                 instance.transform.parent = parent_transform;
                 _objects.Add(instance);
@@ -70,7 +83,8 @@ namespace Developers
 
             //  Asteroids.
             //
-            _asteroids.ForceStart(GlobalVars.POOL_SIZE_SMALL, GlobalVars.PREFAB_NAME_ASTEROID_1, _pooling_parent.transform);
+            _asteroids.ForceStart(GlobalVars.POOL_SIZE_SMALL, new string[]{GlobalVars.PREFAB_NAME_ASTEROID_1,GlobalVars.PREFAB_NAME_ASTEROID_2,GlobalVars.PREFAB_NAME_ASTEROID_3}, 
+                _pooling_parent.transform);
             foreach (GameObject ast in _asteroids.Objects)
                 Main.GetInstance().Registry.Asteroids.Add(ast);
 

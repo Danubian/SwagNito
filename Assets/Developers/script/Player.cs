@@ -6,7 +6,7 @@ namespace Developers
 
     public class Player : SwagObject
     {
-		public GameObject _graphics;
+        public GameObject _graphics;
         //	public float horizontalSpeed;
         //	public RectTransform boundaries;
         //	public float leftBound;
@@ -21,6 +21,13 @@ namespace Developers
         void Start()
         {
             Move(4);
+        }
+
+        void Update()
+        {
+
+            //
+            _graphics.transform.rotation *= Quaternion.Euler(Vector3.forward * GlobalVars.RATE_PLAYER_SPIN);
         }
 
         public void MoveLeft()

@@ -11,11 +11,22 @@ namespace Developers
         {
 			this.entityType = Type.ASTEROID;
 			speed = GlobalVars.ASTEROID_SPEED;
+
+            _rotateRate = UnityEngine.Random.Range(-3, 3);
+
+            _randScale = UnityEngine.Random.Range(0.8f, 2f);
+            transform.localScale = Vector3.one * _randScale;
         }
 
         // Update is called once per frame
+        private float _rotateRate;
+        private float _randScale;
         void Update()
         {
+            //
+            transform.rotation *= Quaternion.Euler(Vector3.forward * _rotateRate);
+
+            //
             if (InVertBounds())
             {
                 Vector3 pos = transform.position;
