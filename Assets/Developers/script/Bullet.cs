@@ -4,8 +4,7 @@ using System.Collections;
 namespace Developers
 {
 	public class Bullet : SwagObject {
-		
-		// Use this for initialization
+
 		void Start () {
 			this.entityType = Type.BULLET;
 			speed = GlobalVars.BULLET_SPEED;
@@ -21,7 +20,6 @@ namespace Developers
 			}
 			else
 			{
-				//Destroy(this.gameObject);
 				OnDestroy();
 			}
 		}

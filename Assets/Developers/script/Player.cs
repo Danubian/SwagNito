@@ -3,21 +3,10 @@ using System.Collections;
 
 namespace Developers
 {
-
     public class Player : SwagObject
     {
 		public GameObject _graphics;
-        //	public float horizontalSpeed;
-        //	public RectTransform boundaries;
-        //	public float leftBound;
-        //	public float rightBound;
-        //	public float basePos;
-        //	private float width = 1f;
-        //	public int max; 
-        //	public float chunkSize;
-        //	public float length;
 
-        // Use this for initialization
         void Start()
         {
             Move(4);

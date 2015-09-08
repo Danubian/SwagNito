@@ -3,17 +3,14 @@ using System.Collections;
 
 namespace Developers
 {
-
     public class Asteroid : SwagObject
 	{
-        // Use this for initialization
         void Start()
         {
 			this.entityType = Type.ASTEROID;
 			speed = GlobalVars.ASTEROID_SPEED;
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (InVertBounds())
@@ -24,7 +21,6 @@ namespace Developers
             }
             else
             {
-				//Destroy(this.gameObject);
 				OnDestroy();
             }
         }
@@ -43,10 +39,8 @@ namespace Developers
 
 		public override void HandleCollision(Type other)
 		{
-			DBG.Log("Asteroid : HandleCollision : " + other.ToString());
 			if(other != Type.ASTEROID)
 			{
-                DBG.Log("Object Destroyed " + this.name);
 				OnDestroy();
 			}
 		}

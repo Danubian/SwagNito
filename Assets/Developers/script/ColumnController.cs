@@ -3,27 +3,20 @@ using System.Collections;
 
 namespace Developers
 {
-
     public class ColumnController : MonoBehaviour
     {
         public RectTransform boundaries;
         private float basePos;
         private float colSize;
-        //	private float length;
         [HideInInspector]
         public float bottomBound;
         [HideInInspector]
         public float topBound;
 
-        // Use this for initialization
         public void ForceStart()
         {
             Vector3[] corners = new Vector3[4];
             boundaries.GetWorldCorners(corners);
-//            foreach (Vector3 corner in corners)
-//            {
-//                Debug.Log("Corner : " + corner.ToString());
-//            }
 
             float leftBound = corners[0].x;
             bottomBound = corners[0].y;
