@@ -16,13 +16,13 @@ namespace Developers
         private MainPooling _pooling;
         private MainAudio _audio;
         private MainProgress _progress;
+        private MainGame _game;
 
         GameObject _menu_title;
         GameObject _menu_credits;
         GameObject _menu_results;
         GameObject _menu_connect;
 
-        MainGame _game;
 
         public void Awake()
         {
@@ -63,6 +63,7 @@ namespace Developers
         public MainProgress Progress { get { return _progress; } }
         public MainAudio Audio { get { return _audio; } }
         public MainRegistry Registry { get { return _registry; } }
+        public MainGame Game { get { return _game; } }
 
         public void LoadGame()
         {

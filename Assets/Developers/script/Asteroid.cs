@@ -57,6 +57,11 @@ namespace Developers
 			DBG.Log("Asteroid : HandleCollision : " + other.ToString());
 			if(other != Type.ASTEROID)
 			{
+                if (Main.GetInstance().Game != null && other == Type.BULLET)
+                {
+                    Main.GetInstance().Game.StepLevel();
+                }
+
                 DBG.Log("Object Destroyed " + this.name);
 				OnDestroy();
 			}

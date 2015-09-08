@@ -35,5 +35,9 @@ namespace Developers
 		public const float VERT_DEPTH_BUFFER = 1f;
 
         public const float RATE_PLAYER_SPIN = 2f;
+
+        public const int MIN_LEVEL_BAR_Y = -10;
+        public const int MAX_LEVEL_BAR_Y = 0;
+        public const float RATE_STEP_LEVEL_BAR_Y = 0.5f;
     }
 }

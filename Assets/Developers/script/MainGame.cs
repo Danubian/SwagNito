@@ -5,6 +5,8 @@ namespace Developers
 {
     public class MainGame : MonoBehaviour
     {
+        public LevelBarController _levelBar;
+
         public void KillGame()
         {
             DBG.Log("Destroying game.");
@@ -32,6 +34,11 @@ namespace Developers
             //        effect.transform.position = pos;
             //    }
             //}
+        }
+
+        public void StepLevel()
+        {
+            _levelBar.Step();
         }
     }
 
