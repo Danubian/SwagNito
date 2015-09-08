@@ -18,6 +18,20 @@ namespace Developers
                 Main.GetInstance().GotoMenu_Results();
                 Main.GetInstance().KillGame();
             }
+
+            //  Test out bullet hit asteroid effect.
+            //
+            //if( Input.GetMouseButton(0) == true )
+            //{
+            //    Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //    pos.z = 0;
+
+            //    GameObject effect = Main.GetInstance().Pools.Get_Effect_Bullet_Hit_Asteroid();
+            //    if (effect != null)
+            //    {
+            //        effect.transform.position = pos;
+            //    }
+            //}
         }
     }
 
