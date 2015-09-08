@@ -76,9 +76,9 @@ namespace Developers
 
             //  Bullets.
             //
-            //_bullets.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_BULLET, _pooling_parent.transform);
-            //foreach (GameObject b in _bullets.Objects)
-                //Main.GetInstance().Registry.Bullets.Add(b);
+            _bullets.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_BULLET, _pooling_parent.transform);
+            foreach (GameObject b in _bullets.Objects)
+                Main.GetInstance().Registry.Bullets.Add(b);
 
             //  Effects.
             //

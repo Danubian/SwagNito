@@ -33,10 +33,10 @@ namespace Developers
 
 		public override void HandleCollision(Type other)
 		{
-			Debug.Log("Bullet : HandleCollision " + other.ToString() + ", eval: " + (other == Type.ASTEROID));
+            DBG.Log("Bullet : HandleCollision " + other.ToString() + ", eval: " + (other == Type.ASTEROID));
 			if(other == Type.ASTEROID)
 			{
-				Debug.LogError("Object Destroyed " + this.name);
+				DBG.Log("Object Destroyed " + this.name);
 				OnDestroy();
 			}
 		}

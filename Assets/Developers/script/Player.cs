@@ -25,16 +25,24 @@ namespace Developers
 
         public void MoveLeft()
         {
+            if (bAlive == false)
+                return;
+
             Move(index - 1);
+            SpawnBullet();
         }
 
         public void MoveRight()
         {
+            if (bAlive == false)
+                return;
+
             Move(index + 1);
+            SpawnBullet();
         }
 
 		bool bAlive = true;
-		public override void HandleCollision()
+        public override void HandleCollision(Type other)
 		{
             if( bAlive == true )
             {
@@ -74,6 +82,8 @@ namespace Developers
 				bulletController.colControl = colControl;
 				bulletController.Setup(this.index);
 				bullet.transform.position = this.transform.position;
+
+                Main.GetInstance().Audio.PlayFX_PlayerShoot();
 			}
 		}
     }
