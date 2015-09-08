@@ -33,12 +33,12 @@ namespace Developers
             INSTANCE = this;
             DBG.Log("Created main.");
 
+            _registry = gameObject.AddComponent<MainRegistry>();
+            DBG.Log("Created registry.");
+
             //
             _pooling = gameObject.AddComponent<MainPooling>();
             DBG.Log("Created pools.");
-
-            _registry = gameObject.AddComponent<MainRegistry>();
-            DBG.Log("Created registry.");
 
             _audio = gameObject.AddComponent<MainAudio>();
             DBG.Log("Created audio.");
@@ -60,6 +60,7 @@ namespace Developers
 
         public MainPooling Pools { get { return _pooling; } }
         public MainProgress Progress { get { return _progress; } }
+        public MainRegistry Registry { get { return _registry; } }
 
         public void LoadGame()
         {
@@ -81,6 +82,10 @@ namespace Developers
             if (_game != null)
             {
                 _game.KillGame();
+
+                //  Disable all game shit.
+                //
+                _registry.CleanupGame();
             }
         }
 

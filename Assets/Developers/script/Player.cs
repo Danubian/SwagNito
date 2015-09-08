@@ -6,6 +6,7 @@ namespace Developers
 
     public class Player : SwagObject
     {
+        public GameObject _graphics;
         //	public float horizontalSpeed;
         //	public RectTransform boundaries;
         //	public float leftBound;
@@ -38,9 +39,33 @@ namespace Developers
             Move(index + 1);
         }
 
+        private bool bAlive = true;
 		public override void HandleCollision()
 		{
-			Debug.Log("Player : HandleCollision");
+            if( bAlive == true )
+            {
+                Debug.Log("Player : HandleCollision");
+
+                bAlive = false;
+
+                GameObject effect = Main.GetInstance().Pools.Get_Effect_Player_Hit_Asteroid();
+                if (effect != null)
+                {
+                    effect.transform.position = transform.position;
+                }
+
+                _graphics.SetActive(false);
+                StartCoroutine("GotoResults");
+            }
+
 		}
+
+        private IEnumerator GotoResults()
+        {
+            yield return new WaitForSeconds(2.0f);
+
+            Main.GetInstance().KillGame();
+            Main.GetInstance().GotoMenu_Results();
+        }
     }
 }

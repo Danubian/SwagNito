@@ -29,13 +29,6 @@ namespace Developers
             {
                 bDidStartColCont = true;
 
-                Vector3[] corners = new Vector3[4];
-                GetComponent<RectTransform>().GetWorldCorners(corners);
-                foreach (Vector3 corner in corners)
-                {
-                    Debug.Log("Corner : " + corner.ToString());
-                }
-
                 colCont.ForceStart();
             }
         }
