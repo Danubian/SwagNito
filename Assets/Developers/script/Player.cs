@@ -6,7 +6,7 @@ namespace Developers
 
     public class Player : SwagObject
     {
-        public GameObject _graphics;
+		public GameObject _graphics;
         //	public float horizontalSpeed;
         //	public RectTransform boundaries;
         //	public float leftBound;
@@ -23,12 +23,6 @@ namespace Developers
             Move(4);
         }
 
-        // Update is called once per frame
-//        void Update()
-//        {
-//
-//        }
-
         public void MoveLeft()
         {
             Move(index - 1);
@@ -39,7 +33,7 @@ namespace Developers
             Move(index + 1);
         }
 
-        private bool bAlive = true;
+		bool bAlive = true;
 		public override void HandleCollision()
 		{
             if( bAlive == true )
@@ -70,5 +64,17 @@ namespace Developers
             Main.GetInstance().KillGame();
             Main.GetInstance().GotoMenu_Results();
         }
+
+		public void SpawnBullet()
+		{
+			GameObject bullet = Main.GetInstance().Pools.Get_Bullet();
+			if( bullet != null )
+			{
+				Bullet bulletController = bullet.GetComponent<Bullet>();
+				bulletController.colControl = colControl;
+				bulletController.Setup(this.index);
+				bullet.transform.position = this.transform.position;
+			}
+		}
     }
 }

@@ -5,11 +5,12 @@ namespace Developers
 {
 
     public class Asteroid : SwagObject
-    {
+	{
         // Use this for initialization
         void Start()
         {
-
+			this.entityType = Type.ASTEROID;
+			speed = GlobalVars.ASTEROID_SPEED;
         }
 
         // Update is called once per frame
@@ -18,20 +19,20 @@ namespace Developers
             if (InVertBounds())
             {
                 Vector3 pos = transform.position;
-				float newPosY = pos.y + GlobalVars.ASTEROID_SPEED;
+				float newPosY = pos.y + speed;
                 transform.position = new Vector3(pos.x, newPosY, pos.z);
             }
             else
             {
-                //Destroy(this.gameObject);
-                gameObject.SetActive(false);
+				//Destroy(this.gameObject);
+				OnDestroy();
             }
         }
 
-        public void Setup(int index)
+        public override void Setup(int index)
         {
+			base.Setup(index);
             MoveToBottom();
-            Move(index);
         }
 
         public void MoveToBottom()
@@ -40,16 +41,14 @@ namespace Developers
 			transform.position = new Vector3(pos.x, colControl.bottomBound - GlobalVars.VERT_DEPTH_BUFFER, pos.z);
         }
 
-        private bool InVertBounds()
-        {
-            //TODO
-            //		return true;
-			return colControl.InVertBounds(this.transform.position.y, GlobalVars.VERT_DEPTH_BUFFER);
-        }
-
-		public override void HandleCollision()
+		public override void HandleCollision(Type other)
 		{
-			gameObject.SetActive(false);
+			Debug.Log("Asteroid : HandleCollision : " + other.ToString());
+			if(other != Type.ASTEROID)
+			{
+				Debug.LogError("Object Destroyed " + this.name);
+				OnDestroy();
+			}
 		}
     }
 }

@@ -35,7 +35,7 @@ namespace Developers
 
         public void OnLeftClick()
         {
-            Debug.Log("Left Side Clicked");
+//            Debug.Log("Left Side Clicked");
             if (player != null)
             {
                 player.MoveLeft();
@@ -44,7 +44,7 @@ namespace Developers
 
         public void OnRightClick()
         {
-            Debug.Log("Right Side Clicked");
+//            Debug.Log("Right Side Clicked");
             if (player != null)
             {
                 player.MoveRight();
