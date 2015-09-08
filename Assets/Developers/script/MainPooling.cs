@@ -25,7 +25,7 @@ namespace Developers
         {
             for (int ii = 0; ii < size; ++ii)
             {
-                int rand = UnityEngine.Random.Range(1, 3);
+                int rand = UnityEngine.Random.Range(0, 3);
                 GameObject instance = PrefabLoader.Load(prefabs[rand]);
 
                 //

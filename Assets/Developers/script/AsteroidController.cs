@@ -22,18 +22,20 @@ namespace Developers
             }
         }
 
+		private float asteroidSpeed = GlobalVars.ASTEROID_SPEED;
         private void SpawnAsteroid(int index)
         {
             lastSpawnTime = Time.time;
+			asteroidSpeed += GlobalVars.ASTEROID_SPEED_RAMP;
 
             GameObject asteroid = Main.GetInstance().Pools.Get_Asteroid();
             if( asteroid != null )
             {
                 Asteroid asteroidController = asteroid.GetComponent<Asteroid>();
                 asteroidController.colControl = colControl;
-                asteroidController.Setup(index);
-
-                //
+				asteroidController.Setup(index, asteroidSpeed);
+				
+				//
                 Main.GetInstance().Audio.PlayMusic_SpawnAsteroid();
             }
         }
