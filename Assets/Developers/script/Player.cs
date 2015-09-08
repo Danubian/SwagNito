@@ -3,31 +3,13 @@ using System.Collections;
 
 namespace Developers
 {
-
     public class Player : SwagObject
     {
-        public GameObject _graphics;
-        //	public float horizontalSpeed;
-        //	public RectTransform boundaries;
-        //	public float leftBound;
-        //	public float rightBound;
-        //	public float basePos;
-        //	private float width = 1f;
-        //	public int max; 
-        //	public float chunkSize;
-        //	public float length;
+		public GameObject _graphics;
 
-        // Use this for initialization
         void Start()
         {
             Move(4);
-        }
-
-        void Update()
-        {
-
-            //
-            _graphics.transform.rotation *= Quaternion.Euler(Vector3.forward * GlobalVars.RATE_PLAYER_SPIN);
         }
 
         public void MoveLeft()
@@ -80,17 +62,23 @@ namespace Developers
             Main.GetInstance().GotoMenu_Results();
         }
 
+		private float lastSpawnTime;
 		public void SpawnBullet()
 		{
-			GameObject bullet = Main.GetInstance().Pools.Get_Bullet();
-			if( bullet != null )
+			if((Time.time - lastSpawnTime) >= GlobalVars.FIRE_COOLDOWN)
 			{
-				Bullet bulletController = bullet.GetComponent<Bullet>();
-				bulletController.colControl = colControl;
-				bulletController.Setup(this.index);
-				bullet.transform.position = this.transform.position;
+				lastSpawnTime = Time.time;
 
-                Main.GetInstance().Audio.PlayFX_PlayerShoot();
+				GameObject bullet = Main.GetInstance().Pools.Get_Bullet();
+				if( bullet != null )
+				{
+					Bullet bulletController = bullet.GetComponent<Bullet>();
+					bulletController.colControl = colControl;
+					bulletController.Setup(this.index);
+					bullet.transform.position = this.transform.position;
+					
+					Main.GetInstance().Audio.PlayFX_PlayerShoot();
+				}
 			}
 		}
     }
