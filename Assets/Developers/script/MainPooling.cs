@@ -7,6 +7,8 @@ namespace Developers
     public class Pool
     {
         private List<GameObject> _objects = new List<GameObject>();
+        public List<GameObject> Objects { get { return _objects; } }
+
         private int _last_index = 0;
 
         public void ForceStart(int size, string prefab, Transform parent_transform)
@@ -55,6 +57,7 @@ namespace Developers
         private Pool _asteroids = new Pool();
         private Pool _bullets = new Pool();
         private Pool _effect_bullet_hit_asteroid = new Pool();
+        private Pool _effect_player_hit_asteroid = new Pool();
         private Pool _effect_level_up = new Pool();
 
         private GameObject _pooling_parent;
@@ -65,16 +68,33 @@ namespace Developers
             _pooling_parent = new GameObject("pooling parent");
             _pooling_parent.transform.parent = transform;
 
+            //  Asteroids.
             //
             _asteroids.ForceStart(GlobalVars.POOL_SIZE_SMALL, GlobalVars.PREFAB_NAME_ASTEROID_1, _pooling_parent.transform);
-            _bullets.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_BULLET, _pooling_parent.transform);
-            //_effect_bullet_hit_asteroid.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_EFFECT_BULLET_HIT_ASTEROID, _pooling_parent.transform);
+            foreach (GameObject ast in _asteroids.Objects)
+                Main.GetInstance().Registry.Asteroids.Add(ast);
+
+            //  Bullets.
+            //
+            //_bullets.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_BULLET, _pooling_parent.transform);
+            //foreach (GameObject b in _bullets.Objects)
+                //Main.GetInstance().Registry.Bullets.Add(b);
+
+            //  Effects.
+            //
+            _effect_bullet_hit_asteroid.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_EFFECT_BULLET_HIT_ASTEROID, _pooling_parent.transform);
+            foreach (GameObject effect in _effect_bullet_hit_asteroid.Objects)
+                Main.GetInstance().Registry.Effects.Add(effect);
+            _effect_player_hit_asteroid.ForceStart(GlobalVars.POOL_SIZE_SMALL, GlobalVars.PREFAB_NAME_EFFECT_PLAYER_HIT_ASTEROID, _pooling_parent.transform);
+            foreach (GameObject effect in _effect_player_hit_asteroid.Objects)
+                Main.GetInstance().Registry.Asteroids.Add(effect);
             //_effect_level_up.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_EFFECT_LEVEL_UP, _pooling_parent.transform);
         }
 
         public GameObject Get_Asteroid() { return _asteroids.Get(); }
         public GameObject Get_Bullet() { return _bullets.Get(); }
         public GameObject Get_Effect_Bullet_Hit_Asteroid() { return _effect_bullet_hit_asteroid.Get(); }
+        public GameObject Get_Effect_Player_Hit_Asteroid() { return _effect_player_hit_asteroid.Get(); }
         public GameObject Get_Effect_Level_Up() { return _effect_level_up.Get(); }
     }
 

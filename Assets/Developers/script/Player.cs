@@ -19,7 +19,6 @@ namespace Developers
         // Use this for initialization
         void Start()
         {
-			this.entityType = Type.PLAYER;
             Move(4);
         }
 
@@ -32,13 +31,39 @@ namespace Developers
         public void MoveLeft()
         {
             Move(index - 1);
-			SpawnBullet();
         }
 
         public void MoveRight()
         {
             Move(index + 1);
-			SpawnBullet();
+        }
+
+		public override void HandleCollision()
+		{
+            if( bAlive == true )
+            {
+                Debug.Log("Player : HandleCollision");
+
+                bAlive = false;
+
+                GameObject effect = Main.GetInstance().Pools.Get_Effect_Player_Hit_Asteroid();
+                if (effect != null)
+                {
+                    effect.transform.position = transform.position;
+                }
+
+                _graphics.SetActive(false);
+                StartCoroutine("GotoResults");
+            }
+
+		}
+
+        private IEnumerator GotoResults()
+        {
+            yield return new WaitForSeconds(2.0f);
+
+            Main.GetInstance().KillGame();
+            Main.GetInstance().GotoMenu_Results();
         }
 
 		public void SpawnBullet()
@@ -51,11 +76,6 @@ namespace Developers
 				bulletController.Setup(this.index);
 				bullet.transform.position = this.transform.position;
 			}
-		}
-
-		public override void HandleCollision(Type other)
-		{
-//			Debug.Log("Player : HandleCollision" + other.ToString());
 		}
     }
 }
