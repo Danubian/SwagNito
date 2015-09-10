@@ -72,6 +72,9 @@ namespace Developers
         private Pool _effect_bullet_hit_asteroid = new Pool();
         private Pool _effect_player_hit_asteroid = new Pool();
         private Pool _effect_level_up = new Pool();
+        private Pool _prayer = new Pool();
+        private Pool _prayer_ignored = new Pool();
+        private Pool _prayer_answered= new Pool();
 
         private GameObject _pooling_parent;
 
@@ -103,6 +106,19 @@ namespace Developers
             foreach (GameObject effect in _effect_player_hit_asteroid.Objects)
                 Main.GetInstance().Registry.Asteroids.Add(effect);
             //_effect_level_up.ForceStart(GlobalVars.POOL_SIZE_MEDIUM, GlobalVars.PREFAB_NAME_EFFECT_LEVEL_UP, _pooling_parent.transform);
+
+
+            //  Prayer.
+            //
+            _prayer.ForceStart(GlobalVars.POOL_SIZE_SMALL, GlobalVars.PREFAB_NAME_PRAYER_OFFERING, _pooling_parent.transform);
+            foreach (GameObject b in _prayer.Objects)
+                Main.GetInstance().Registry.Prayer.Add(b);
+            _prayer_ignored.ForceStart(GlobalVars.POOL_SIZE_SMALL, GlobalVars.PREFAB_NAME_PRAYER_IGNORE, _pooling_parent.transform);
+            foreach (GameObject b in _prayer_ignored.Objects)
+                Main.GetInstance().Registry.Prayer.Add(b);
+            _prayer_answered.ForceStart(GlobalVars.POOL_SIZE_SMALL, GlobalVars.PREFAB_NAME_PRAYER_ANSWER, _pooling_parent.transform);
+            foreach (GameObject b in _prayer_answered.Objects)
+                Main.GetInstance().Registry.Prayer.Add(b);
         }
 
         public GameObject Get_Asteroid() { return _asteroids.Get(); }
@@ -110,6 +126,10 @@ namespace Developers
         public GameObject Get_Effect_Bullet_Hit_Asteroid() { return _effect_bullet_hit_asteroid.Get(); }
         public GameObject Get_Effect_Player_Hit_Asteroid() { return _effect_player_hit_asteroid.Get(); }
         public GameObject Get_Effect_Level_Up() { return _effect_level_up.Get(); }
+
+        public GameObject Get_Prayer() { return _prayer.Get(); }
+        public GameObject Get_Prayer_Answered() { return _prayer_answered.Get(); }
+        public GameObject Get_Prayer_Ignored() { return _prayer_ignored.Get(); }
     }
 
 }

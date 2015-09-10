@@ -8,7 +8,8 @@ namespace Developers
 		public enum Type {
 			PLAYER,
 			ASTEROID,
-			BULLET
+			BULLET,
+            PRAYER
 		}
 
 		public Type entityType;
@@ -33,24 +34,25 @@ namespace Developers
 		void OnTriggerEnter(Collider other)
 		{
 			SwagObject otherObject = other.GetComponent<SwagObject>();
-			int otherIndex = otherObject.index;
-			if(otherIndex == this.index)
-			{
-				HandleCollision(otherObject.entityType);
-			}
-		}
+            if (otherObject == null)
+                return;
+            HandleCollision(otherObject);
+        }
 
 		public virtual void Setup(int index)
 		{
 			Move(index);
 		}
 
-		public virtual void HandleCollision(Type other)
+		public virtual void HandleCollision(SwagObject other)
 		{
-			Debug.LogError("SwagObject : HandleCollision" + other.ToString());
+			Debug.LogError("SwagObject : HandleCollision" + other.entityType.ToString());
 		}
 
-		protected void OnDestroy()
+        public virtual void Kill()
+        { }
+
+        protected void OnDestroy()
 		{
 			gameObject.SetActive(false);
 		}

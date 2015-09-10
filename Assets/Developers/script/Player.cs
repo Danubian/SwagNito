@@ -36,25 +36,32 @@ namespace Developers
         }
 
 		bool bAlive = true;
-        public override void HandleCollision(Type other)
+        public override void HandleCollision(SwagObject other)
 		{
             if( bAlive == true )
             {
                 Debug.Log("Player : HandleCollision");
 
-                bAlive = false;
-
-                GameObject effect = Main.GetInstance().Pools.Get_Effect_Player_Hit_Asteroid();
-                if (effect != null)
-                {
-                    effect.transform.position = transform.position;
-                }
-
-                _graphics.SetActive(false);
-                StartCoroutine("GotoResults");
 
                 //
-                Main.GetInstance().Audio.PlayFX_PlayerDeath();
+                if (other.entityType == Type.ASTEROID)
+                {
+                    bAlive = false;
+
+                    GameObject effect = Main.GetInstance().Pools.Get_Effect_Player_Hit_Asteroid();
+                    if (effect != null)
+                    {
+                        effect.transform.position = transform.position;
+                    }
+
+                    _graphics.SetActive(false);
+                    StartCoroutine("GotoResults");
+
+                    //
+                    Main.GetInstance().Audio.PlayFX_PlayerDeath();
+                }
+
+
             }
 
 		}

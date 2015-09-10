@@ -11,6 +11,8 @@ namespace Developers
 
         private int _latest_depth;
 
+        private int _prayer_success_rate;
+
         public int BestDepth { get { return _best_depth; } set { _best_depth = value; } }
         public int BestLevel {
 			get 
@@ -23,6 +25,12 @@ namespace Developers
 			} 
 		}
         public int LatestDepth { get { return _latest_depth; } set { _latest_depth = value; } }
+
+        public int Prayer_Success_Rate
+        {
+            get { return _prayer_success_rate; }
+            set { _prayer_success_rate = value; }
+        }
 
         void Start()
         {

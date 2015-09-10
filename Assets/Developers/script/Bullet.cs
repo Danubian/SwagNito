@@ -29,10 +29,10 @@ namespace Developers
 			this.index = index;
 		}
 
-		public override void HandleCollision(Type other)
+		public override void HandleCollision(SwagObject other)
 		{
-            DBG.Log("Bullet : HandleCollision " + other.ToString() + ", eval: " + (other == Type.ASTEROID));
-			if(other == Type.ASTEROID)
+            DBG.Log("Bullet : HandleCollision " + other.ToString() + ", eval: " + (other.entityType == Type.ASTEROID));
+			if(other.entityType == Type.ASTEROID)
 			{
                 GameObject effect = Main.GetInstance().Pools.Get_Effect_Bullet_Hit_Asteroid();
                 if (effect != null)
