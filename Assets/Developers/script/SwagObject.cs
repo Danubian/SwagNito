@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+
+using System;
 using System.Collections;
 
 namespace Developers
@@ -8,7 +10,8 @@ namespace Developers
 		public enum Type {
 			PLAYER,
 			ASTEROID,
-			BULLET
+			BULLET,
+			UNKNOWN
 		}
 
 		public Type entityType;
@@ -19,7 +22,7 @@ namespace Developers
 
         public int index;
 
-        public void Move(int newIndex)
+        public void Move(int newIndex, Action callback = null)
         {
             if (colControl.InColumnBounds(newIndex))
             {
@@ -27,16 +30,26 @@ namespace Developers
                 Vector3 newPos = new Vector3(newPosX, transform.position.y, transform.position.z);
                 this.transform.position = newPos;
                 index = newIndex;
+
+				if(callback != null)
+				{
+					callback();
+				}
             }
         }
 
 		void OnTriggerEnter(Collider other)
 		{
 			SwagObject otherObject = other.GetComponent<SwagObject>();
-			int otherIndex = otherObject.index;
-			if(otherIndex == this.index)
+			if(otherObject != null)
 			{
-				HandleCollision(otherObject.entityType);
+				int otherIndex = otherObject.index;
+				if(otherIndex == this.index)
+				{
+					HandleCollision(otherObject.entityType);
+				}
+			} else {
+				HandleCollision(Type.UNKNOWN);
 			}
 		}
 

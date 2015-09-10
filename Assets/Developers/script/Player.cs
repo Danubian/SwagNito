@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+
+using System;
 using System.Collections;
 
 namespace Developers
@@ -22,8 +24,11 @@ namespace Developers
             if (bAlive == false)
                 return;
 
-            Move(index - 1);
-            SpawnBullet();
+			Action callback = () => {
+				SpawnBullet();
+			};
+
+			Move(index - 1, callback);
         }
 
         public void MoveRight()
@@ -31,8 +36,11 @@ namespace Developers
             if (bAlive == false)
                 return;
 
-            Move(index + 1);
-            SpawnBullet();
+			Action callback = () => {
+				SpawnBullet();
+			};
+
+            Move(index + 1, callback);
         }
 
 		bool bAlive = true;

@@ -32,7 +32,7 @@ namespace Developers
 		public override void HandleCollision(Type other)
 		{
             DBG.Log("Bullet : HandleCollision " + other.ToString() + ", eval: " + (other == Type.ASTEROID));
-			if(other == Type.ASTEROID)
+			if(other == Type.ASTEROID || other == Type.UNKNOWN)
 			{
                 GameObject effect = Main.GetInstance().Pools.Get_Effect_Bullet_Hit_Asteroid();
                 if (effect != null)

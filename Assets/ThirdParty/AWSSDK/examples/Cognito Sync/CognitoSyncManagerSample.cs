@@ -142,31 +142,8 @@ namespace AWSSDK.Examples
             }
 			GUILayout.Space(20);
 
-#if USE_FACEBOOK_LOGIN
-			GUI.enabled = true;
-#else
 			GUI.enabled = false;
-#endif
-			if (GUILayout.Button("Connect to Facebook", GUILayout.MinHeight(20), GUILayout.Width(Screen.width * 0.6f)))
-			{
-#if USE_FACEBOOK_LOGIN
-				statusMessage = "Connecting to Facebook";
-				if (!FB.IsInitialized)
-				{
-					FB.Init(delegate()
-					        {
-						Debug.Log("starting thread");
-						
-						// shows to connect the current identityid or create a new identityid with facebook authentication
-						FB.Login("email", FacebookLoginCallback);
-					});
-				}
-				else
-				{
-					FB.Login("email", FacebookLoginCallback);
-				}
-#endif
-			}
+
 			GUILayout.EndArea();
 
         }
