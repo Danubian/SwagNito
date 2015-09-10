@@ -5,7 +5,10 @@ namespace Developers
 {
 
     public class Asteroid : SwagObject
-	{
+    {
+
+        protected bool _bAlive;
+
         // Use this for initialization
         void Start()
         {
@@ -14,7 +17,7 @@ namespace Developers
 
             _rotateRate = UnityEngine.Random.Range(-3, 3);
 
-            _randScale = UnityEngine.Random.Range(0.8f, 2f);
+            _randScale = UnityEngine.Random.Range(0.8f, 1.2f);
             transform.localScale = Vector3.one * _randScale;
         }
 
@@ -45,6 +48,7 @@ namespace Developers
 			base.Setup(index);
             MoveToBottom();
             this.speed = speed;
+            _bAlive = true;
         }
 
         public void MoveToBottom()
@@ -53,19 +57,24 @@ namespace Developers
 			transform.position = new Vector3(pos.x, colControl.bottomBound - GlobalVars.VERT_DEPTH_BUFFER, pos.z);
         }
 
-		public override void HandleCollision(Type other)
-		{
-			DBG.Log("Asteroid : HandleCollision : " + other.ToString());
-			if(other != Type.ASTEROID)
-			{
-                if (Main.GetInstance().Game != null && other == Type.BULLET)
+		public override void HandleCollision(SwagObject other)
+        {
+            int otherIndex = other.index;
+            if (otherIndex == this.index && other.entityType == Type.BULLET || other.entityType == Type.PLAYER)
+            {
+                if (Main.GetInstance().Game != null && other.entityType == Type.BULLET)
                 {
 					Main.GetInstance().Progress.xp += GlobalVars.ASTEROID_LEVEL;
                 }
 
-                DBG.Log("Object Destroyed " + this.name);
-				OnDestroy();
-			}
-		}
+        public override void Kill()
+        {
+            if (_bAlive == false)
+                return;
+            _bAlive = false;
+
+            DBG.Log("Object Destroyed " + this.name);
+            OnDestroy();
+        }
     }
 }

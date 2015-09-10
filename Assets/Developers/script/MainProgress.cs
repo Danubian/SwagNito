@@ -36,30 +36,13 @@ namespace Developers
 				}
 			} 
 		}
+        public int LatestDepth { get { return _latest_depth; } set { _latest_depth = value; } }
 
-		public int xp { 
-			get { return m_xp; } 
-			set {
-//				Debug.LogWarning("XP: " + m_xp + ", value : " + value);
-				level = value / GlobalVars.LEVEL_UP_EXP;
-//				Debug.Log("Level: " + level);
-				levelBar.UpdateDisplay();
-				
-				m_xp = value;
-			} 
-		}
-
-		public int level { 
-			get { return m_level; } 
-			set {
-				m_last_level = m_level;
-				m_level = value;
-				if(m_level > bestLevel)
-				{
-					bestLevel = m_level;
-				}
-			} 
-		}
+        public int Prayer_Success_Rate
+        {
+            get { return _prayer_success_rate; }
+            set { _prayer_success_rate = value; }
+        }
 
         void Start()
         {

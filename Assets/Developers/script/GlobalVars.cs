@@ -24,13 +24,17 @@ namespace Developers
         public const string PREFAB_NAME_EFFECT_PLAYER_HIT_ASTEROID = "Effect_player_hit_asteroid";
         public const string PREFAB_NAME_EFFECT_LEVEL_UP = "effect_bullet_level_up";
 
-		public const float ASTEROID_SPAWN_TIME = 0.3f;
-        public const float ASTEROID_SPEED = .125f;
+        public const string PREFAB_NAME_PRAYER_OFFERING = "PrayerOffering";
+        public const string PREFAB_NAME_PRAYER_ANSWER = "PrayerAnswered";
+        public const string PREFAB_NAME_PRAYER_IGNORE = "PrayerIgnored";
+
+        public const float ASTEROID_SPAWN_TIME = 1f;
+        public const float ASTEROID_SPEED = .05f;
 
         public const float ASTEROID_SPEED_RAMP = 0.1f;
 
 		public const float BULLET_SPEED = -.0625f;
-        public const float FIRE_COOLDOWN = 0.5f;
+        public const float FIRE_COOLDOWN = 0.2f;
 
 		public const int COLUMNS_TOTAL = 9;
 		public const int COLUMNS_CENTER_INDEX = COLUMNS_TOTAL / 2;
@@ -42,7 +46,15 @@ namespace Developers
         public const int MIN_LEVEL_BAR_Y = -10;
         public const int MAX_LEVEL_BAR_Y = 0;
         public const float RATE_STEP_LEVEL_BAR_Y = 0.5f;
+
 		public const int ASTEROID_LEVEL = 10;
 		public const int LEVEL_UP_EXP = 100;
+
+        public const int RATE_PRAYER_SUCCESS = 15;
+        public const int BASE_RATE_PRAYER_SUCCESS = 20;
+        public const int DURATION_PRAYER_IGNORED = 3;
+        public const int DURATION_PRAYER_ANSWERED = 2;
+        public const int RATE_TICK_PRAYER_SPAWN = 45;
+        public const int COOLDOWN_PRAYER = 3;
     }
 }

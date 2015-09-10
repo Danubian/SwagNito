@@ -18,7 +18,7 @@ namespace Developers
 			if ((Time.time - lastSpawnTime) >= GlobalVars.ASTEROID_SPAWN_TIME)
             {
                 int index = Random.Range(0, GlobalVars.COLUMNS_TOTAL);
-                SpawnAsteroid(index);
+               SpawnAsteroid(index);
             }
         }
 

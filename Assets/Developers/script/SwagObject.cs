@@ -42,14 +42,10 @@ namespace Developers
 		{
 			SwagObject otherObject = other.GetComponent<SwagObject>();
 			if(otherObject != null)
-			{
-				int otherIndex = otherObject.index;
-				if(otherIndex == this.index)
-				{
-					HandleCollision(otherObject.entityType);
-				}
+            {
+                HandleCollision(otherObject);
 			} else {
-				HandleCollision(Type.UNKNOWN);
+				//HandleCollision(Type.UNKNOWN);
 			}
 		}
 
@@ -58,12 +54,15 @@ namespace Developers
 			Move(index);
 		}
 
-		public virtual void HandleCollision(Type other)
-		{
-			Debug.LogError("SwagObject : HandleCollision" + other.ToString());
-		}
+        public virtual void HandleCollision(SwagObject other)
+        {
+            Debug.LogError("SwagObject : HandleCollision" + other.ToString());
+        }
+        public virtual void Kill()
+        {
+        }
 
-		protected virtual void OnDestroy()
+        protected void OnDestroy()
 		{
 			gameObject.SetActive(false);
 		}

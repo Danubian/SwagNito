@@ -6,6 +6,13 @@ namespace Developers
     public class MainGame : MonoBehaviour
     {
         public LevelBarController _levelBar;
+        public bool _bPrayerUp = false;
+        private bool _bPrayerCooling = false;
+
+        void Start()
+        {
+            StartCoroutine("_TickCreatePrayer");
+        }
 
         public void KillGame()
         {
@@ -34,6 +41,39 @@ namespace Developers
             //        effect.transform.position = pos;
             //    }
             //}
+        }
+
+        public void StepLevel()
+        {
+            _levelBar.Step();
+        }
+
+        private IEnumerator _TickCreatePrayer()
+        {
+            for (;;)
+            {
+                yield return new WaitForSeconds(GlobalVars.RATE_TICK_PRAYER_SPAWN);
+
+                CreatePrayer();
+            }
+        }
+
+        public void CreatePrayer()
+        {
+            if(_bPrayerCooling == false && _bPrayerUp == false)
+            {
+                _bPrayerUp = true;
+                _bPrayerCooling = true;
+                StartCoroutine("_FinishCooldownPrayer");
+                
+                    GameObject go = Main.GetInstance().Pools.Get_Prayer();
+                    go.SetActive(true);
+;            }
+        }
+        private IEnumerator _FinishCooldownPrayer()
+        {
+            yield return new WaitForSeconds(GlobalVars.COOLDOWN_PRAYER);
+            _bPrayerCooling = false;
         }
     }
 
