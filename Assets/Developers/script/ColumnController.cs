@@ -15,6 +15,11 @@ namespace Developers
 
         public void ForceStart()
         {
+			Debug.Log("Min: " + boundaries.anchorMin);
+			Debug.Log("Max: " + boundaries.anchorMax);
+			Debug.Log("Min: " + boundaries.offsetMin);
+			Debug.Log("Max: " + boundaries.offsetMax);
+
             Vector3[] corners = new Vector3[4];
             boundaries.GetWorldCorners(corners);
 

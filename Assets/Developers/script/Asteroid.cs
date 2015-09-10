@@ -60,7 +60,7 @@ namespace Developers
 			{
                 if (Main.GetInstance().Game != null && other == Type.BULLET)
                 {
-                    Main.GetInstance().Game.StepLevel();
+					Main.GetInstance().Progress.xp += GlobalVars.ASTEROID_LEVEL;
                 }
 
                 DBG.Log("Object Destroyed " + this.name);

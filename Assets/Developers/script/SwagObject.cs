@@ -63,7 +63,7 @@ namespace Developers
 			Debug.LogError("SwagObject : HandleCollision" + other.ToString());
 		}
 
-		protected void OnDestroy()
+		protected virtual void OnDestroy()
 		{
 			gameObject.SetActive(false);
 		}

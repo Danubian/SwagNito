@@ -1,34 +1,36 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 namespace Developers
 {
     public class LevelBarController : MonoBehaviour
     {
-        public GameObject _graphics;
         public GameObject _levelUpFlash;
-        private Vector3 _tempV3;
+		public Image xpBar;
 
         public void Start()
         {
-            _graphics.transform.localPosition = new Vector3(_graphics.transform.localPosition.x, GlobalVars.MIN_LEVEL_BAR_Y, 0);
-        }
-        public void Step()
-        {
-            _tempV3 = _graphics.transform.localPosition;
+			Main.GetInstance().Progress.levelBar = this;
+			xpBar.fillAmount = 0f;
+		}
 
-            _tempV3.y += 0.5f;
-            if (_tempV3.y >= GlobalVars.MAX_LEVEL_BAR_Y)
-            {
-                //  Level up.
-                //
-                _tempV3.y = GlobalVars.MIN_LEVEL_BAR_Y;
-                ShowLevelUp();
-            }
+		public void UpdateDisplay()
+		{
+			int currentLevel = Main.GetInstance().Progress.level;
+			int lastLevel = Main.GetInstance().Progress.lastLevel;
+			int xp = Main.GetInstance().Progress.xp;
 
-            _graphics.transform.localPosition = _tempV3;
+			float xpPercent = (1f * xp % GlobalVars.LEVEL_UP_EXP) / GlobalVars.LEVEL_UP_EXP;
+			Debug.LogWarning("xpPercent: " + xpPercent + ", xp: " + xp);
+			xpBar.fillAmount = xpPercent;
 
-        }
+			Debug.LogError("Current: " + currentLevel + ", Last: " + lastLevel);
+			if(currentLevel > lastLevel)
+			{
+				ShowLevelUp();
+			}
+		}
 
         private void ShowLevelUp()
         {

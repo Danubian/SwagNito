@@ -42,5 +42,7 @@ namespace Developers
         public const int MIN_LEVEL_BAR_Y = -10;
         public const int MAX_LEVEL_BAR_Y = 0;
         public const float RATE_STEP_LEVEL_BAR_Y = 0.5f;
+		public const int ASTEROID_LEVEL = 10;
+		public const int LEVEL_UP_EXP = 100;
     }
 }

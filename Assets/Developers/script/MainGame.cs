@@ -35,11 +35,6 @@ namespace Developers
             //    }
             //}
         }
-
-        public void StepLevel()
-        {
-            _levelBar.Step();
-        }
     }
 
 }
