@@ -46,8 +46,6 @@ namespace Developers
         public void StepLevel()
         {
             _levelBar.Step();
-
-            _CreatePrayer();
         }
 
         private IEnumerator _TickCreatePrayer()
@@ -56,11 +54,11 @@ namespace Developers
             {
                 yield return new WaitForSeconds(GlobalVars.RATE_TICK_PRAYER_SPAWN);
 
-                _CreatePrayer();
+                CreatePrayer();
             }
         }
 
-        private void _CreatePrayer()
+        public void CreatePrayer()
         {
             if(_bPrayerCooling == false && _bPrayerUp == false)
             {

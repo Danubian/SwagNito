@@ -24,6 +24,7 @@ namespace Developers
                 //
                 _tempV3.y = GlobalVars.MIN_LEVEL_BAR_Y;
                 ShowLevelUp();
+                Main.GetInstance().Game.CreatePrayer();
             }
 
             _graphics.transform.localPosition = _tempV3;

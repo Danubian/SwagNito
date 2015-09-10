@@ -34,7 +34,7 @@ namespace Developers
         public const float ASTEROID_SPEED_RAMP = 0.1f;
 
 		public const float BULLET_SPEED = -.0625f;
-        public const float FIRE_COOLDOWN = 0.5f;
+        public const float FIRE_COOLDOWN = 0.2f;
 
 		public const int COLUMNS_TOTAL = 9;
 		public const int COLUMNS_CENTER_INDEX = COLUMNS_TOTAL / 2;
@@ -48,10 +48,10 @@ namespace Developers
         public const float RATE_STEP_LEVEL_BAR_Y = 0.5f;
 
         public const int RATE_PRAYER_SUCCESS = 15;
-        public const int BASE_RATE_PRAYER_SUCCESS = 45;
+        public const int BASE_RATE_PRAYER_SUCCESS = 20;
         public const int DURATION_PRAYER_IGNORED = 3;
         public const int DURATION_PRAYER_ANSWERED = 2;
-        public const int RATE_TICK_PRAYER_SPAWN = 30;
+        public const int RATE_TICK_PRAYER_SPAWN = 45;
         public const int COOLDOWN_PRAYER = 3;
     }
 }

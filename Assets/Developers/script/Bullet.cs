@@ -33,15 +33,19 @@ namespace Developers
 		{
             DBG.Log("Bullet : HandleCollision " + other.ToString() + ", eval: " + (other.entityType == Type.ASTEROID));
 			if(other.entityType == Type.ASTEROID)
-			{
-                GameObject effect = Main.GetInstance().Pools.Get_Effect_Bullet_Hit_Asteroid();
-                if (effect != null)
+            {
+                int otherIndex = other.index;
+                if (otherIndex == this.index)
                 {
-                    effect.transform.position = transform.position;
-                }
+                    GameObject effect = Main.GetInstance().Pools.Get_Effect_Bullet_Hit_Asteroid();
+                    if (effect != null)
+                    {
+                        effect.transform.position = transform.position;
+                    }
 
-				DBG.Log("Object Destroyed " + this.name);
-				OnDestroy();
+                    DBG.Log("Object Destroyed " + this.name);
+                    OnDestroy();
+                }
 			}
 		}
 	}
